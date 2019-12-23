@@ -16,6 +16,7 @@
 <meta property="og:description" content="年少有为的废物啊">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="阿杜">
+<meta property="article:tag" content="杜青青的博客">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="阿杜的博客" type="application/atom+xml">
@@ -59,7 +60,19 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/tags/Vue/">Vue</a></li>
+	        
+				<li><a href="/tags/Node">Node</a></li>
+	        
+				<li><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F">小程序</a></li>
+	        
+				<li><a href="/tags/Typescript">Typescript</a></li>
+	        
+				<li><a href="/tags/ES6">Es6</a></li>
+	        
+				<li><a href="/tags/CSS">CSS</a></li>
+	        
+				<li><a href="/tags/%E5%B7%A5%E5%85%B7">工具</a></li>
 	        
 			</ul>
 		</nav>
@@ -119,6 +132,18 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -136,12 +161,24 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 12.5%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 12.5%"><a href="/tags/Vue/">Vue</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/Node">Node</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F">小程序</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/Typescript">Typescript</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/ES6">Es6</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/CSS">CSS</a></li>
+		        
+					<li style="width: 12.5%"><a href="/tags/%E5%B7%A5%E5%85%B7">工具</a></li>
 		        
 				</ul>
 			</nav>
@@ -157,6 +194,95 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-ES6的新特性总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/23/ES6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/">ES6新特性总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/23/ES6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2019-12-23T13:00:10.107Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在日常做项目中用了一些很好用的ES6新的属性方法,我总结了一部分,想了解更多内容的请去<a href="https://www.runoob.com/w3cnote/es6-tutorial.html" target="_blank" rel="noopener">ES6教程查看</a></p>
+<h3 id="es6之扩展运算符-三个点（…）"><a href="#es6之扩展运算符-三个点（…）" class="headerlink" title="es6之扩展运算符 三个点（…）"></a>es6之扩展运算符 三个点（…）</h3><ul>
+<li>展开数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; [&#39;apple&#39;,&#39;banana&#39;,&#39;orange&#39;];</span><br><span class="line">console.log(...arr); &#x2F;&#x2F; &#39;apple&#39;,&#39;banana&#39;,&#39;orange&#39;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>当使用数组传参时可以合成数组</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function show(...a)&#123;</span><br><span class="line"></span><br><span class="line">   console.log(a);</span><br><span class="line">   &#x2F;&#x2F; [1, 2, 3, 4, 5]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">show(1,2,3,4,5);</span><br></pre></td></tr></table></figure>
+
+<h3 id="es6之字符串模板（-）"><a href="#es6之字符串模板（-）" class="headerlink" title="es6之字符串模板（``）"></a>es6之字符串模板（``）</h3><ul>
+<li>这个字符串模板使用场景很多变量拼接时经常用到，使用时按键盘Tab键上面的那个按键</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let name &#x3D;&#39;dqq&#39;;</span><br><span class="line">let age &#x3D; 18;</span><br><span class="line">let str &#x3D; &#96;这个人叫$&#123;name&#125;, 年龄是 $&#123;age&#125;岁&#96;;</span><br><span class="line">console.log(str);</span><br><span class="line">&#x2F;&#x2F; 这个人叫dqq, 年龄是18岁</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/23/ES6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -324,6 +450,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
