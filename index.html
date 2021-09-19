@@ -205,6 +205,189 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-css文本处理方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/19/css%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">CSS文本处理方法</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/19/css%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2021-09-19T14:50:48.728Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS开发中的经验总结</p>
+<h3 id="一-、文本换行总结"><a href="#一-、文本换行总结" class="headerlink" title="一 、文本换行总结"></a>一 、文本换行总结</h3><ul>
+<li>强制英文单词断行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">   word-break:break-all;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自动换行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">    word-wrap: break-word;</span><br><span class="line">    word-break: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>强制不换行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">    white-space:nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二-、文字间距设置"><a href="#二-、文字间距设置" class="headerlink" title="二 、文字间距设置"></a>二 、文字间距设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 &#123;letter-spacing:2px&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三-、文字缩进-首行缩进"><a href="#三-、文字缩进-首行缩进" class="headerlink" title="三 、文字缩进,首行缩进"></a>三 、文字缩进,首行缩进</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">  text-indent:50px;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="四-、文字两端对齐"><a href="#四-、文字两端对齐" class="headerlink" title="四 、文字两端对齐"></a>四 、文字两端对齐</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;justify-text&quot;&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;li&quot;&gt;账号&lt;&#x2F;div&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;li&quot;&gt;密码&lt;&#x2F;div&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;li&quot;&gt;电子邮件&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.justify-text &#123;</span><br><span class="line"> .li &#123;</span><br><span class="line">    padding: 0 20px;</span><br><span class="line">    margin-top: 10px;</span><br><span class="line">    width: 100px;</span><br><span class="line">    background-color: #f13f84;</span><br><span class="line">    line-height: 40px;</span><br><span class="line">    text-align-last: justify;</span><br><span class="line">    color: #fff;</span><br><span class="line">    list-style: none;</span><br><span class="line">    &amp;:first-child &#123;</span><br><span class="line">    margin-top: 0;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="五-、文字的排版方向"><a href="#五-、文字的排版方向" class="headerlink" title="五 、文字的排版方向"></a>五 、文字的排版方向</h3><blockquote>
+<p>writing-mode 属性定义了文本在水平或垂直方向上如何排布。</p>
+</blockquote>
+<ol>
+<li>horizontal-tb：水平方向自上而下的书写方式。即 left-right-top-bottom</li>
+<li>vertical-rl：垂直方向自右而左的书写方式。即 top-bottom-right-left</li>
+<li>vertical-lr：垂直方向内内容从上到下，水平方向从左到右</li>
+<li>sideways-rl：内容垂直方向从上到下排列</li>
+<li>sideways-lr：内容垂直方向从下到上排列<blockquote>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;bruce flex-ct-x&quot;&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;vertical-text&quot;&gt;</span><br><span class="line">  &lt;h3&gt;诗经&lt;&#x2F;h3&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"> 死生契阔，&lt;br&gt;</span><br><span class="line"> 与子成说。&lt;br&gt;</span><br><span class="line"> 执子之手，&lt;br&gt;</span><br><span class="line"> 与子偕老。</span><br><span class="line"> &lt;&#x2F;p&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.vertical-text &#123;</span><br><span class="line"> writing-mode: vertical-rl; &#x2F;&#x2F; 文字排版方向</span><br><span class="line"> h3 &#123;</span><br><span class="line">  padding-left: 10px;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  color: #d60f5c;</span><br><span class="line"> &#125;</span><br><span class="line"> p &#123;</span><br><span class="line">  line-height: 30px; &#x2F;&#x2F; 行间距</span><br><span class="line"> letter-spacing: 7px; &#x2F;&#x2F; 文字间距</span><br><span class="line">  color: #ee1166;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/19/css%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-css居中定位的总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/19/css%E5%B1%85%E4%B8%AD%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%80%BB%E7%BB%93/">CSS居中方法总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/19/css%E5%B1%85%E4%B8%AD%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-09-19T14:50:48.728Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS开发中的经验总结</p>
+<h3 id="css定位translate-方法"><a href="#css定位translate-方法" class="headerlink" title="css定位translate 方法"></a>css定位translate 方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">center &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">    height: 500px;</span><br><span class="line">    &#125;</span><br><span class="line">        .center_text&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 50%;</span><br><span class="line">            left: 50%;</span><br><span class="line">            transform: translate(-50%, -50%);</span><br><span class="line">            width: 300px;</span><br><span class="line">            height: 600px;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/19/css%E5%B1%85%E4%B8%AD%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-前端css小技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -226,6 +409,64 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>CSS开发中的经验总结</p>
+<h3 id="一、-超出隐藏"><a href="#一、-超出隐藏" class="headerlink" title="一、 超出隐藏"></a>一、 超出隐藏</h3><ul>
+<li>一行显示，超出…</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">white-space: nowrap;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>两行显示，超出…</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">display: -webkit-box;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 2;</span><br><span class="line">overflow: hidden;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、-画各种三角形"><a href="#二、-画各种三角形" class="headerlink" title="二、 画各种三角形"></a>二、 画各种三角形</h3><p><a href="https://www.cnblogs.com/chengxs/p/11406278.html" target="_blank" rel="noopener">画三角形参考内容</a></p>
+<ul>
+<li>向上三角形</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  #triangle-up &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-left: 50px solid transparent;</span><br><span class="line">    border-right: 50px solid transparent;</span><br><span class="line">    border-bottom: 100px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>向下三角形</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> #triangle-down &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-left: 50px solid transparent;</span><br><span class="line">    border-right: 50px solid transparent;</span><br><span class="line">    border-top: 100px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>向左三角形</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  #triangle-left &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-top: 50px solid transparent;</span><br><span class="line">    border-right: 100px solid red;</span><br><span class="line">    border-bottom: 50px solid transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>向右三角形</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> #triangle-right &#123;</span><br><span class="line">    width: 0;</span><br><span class="line">    height: 0;</span><br><span class="line">    border-top: 50px solid transparent;</span><br><span class="line">    border-left: 100px solid red;</span><br><span class="line">    border-bottom: 50px solid transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="三、-九宫格画法"><a href="#三、-九宫格画法" class="headerlink" title="三、 九宫格画法"></a>三、 九宫格画法</h3><ul>
+<li>flex布局+css3</li>
+</ul>
+<blockquote>
+<p>原理：flex布局和css3计算属性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">*&#123;</span><br><span class="line"> margin: 0;</span><br><span class="line"> padding: 0;</span><br><span class="line">&#125;</span><br><span class="line">.blockDiv&#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    display:flex;</span><br><span class="line">    flex-wrap: wrap;</span><br><span class="line">&#125;</span><br><span class="line">.block&#123;</span><br><span class="line">    width: calc(calc(100% &#x2F; 3) - 10px);</span><br><span class="line">    margin:5px;</span><br><span class="line">    height:50px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    border:1px  solid #000;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">   &lt;div class&#x3D;&quot;blockDiv&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;block&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>float写法</li>
+</ul>
+<blockquote>
+<p>原理：margin负边距</p>
+</blockquote>
+<ul>
+<li><p>关键点</p>
+<ol>
+<li>最外层的包裹元素等于：li宽度<em>3+li右间距</em>2</li>
+<li>如果li是右间距，则ul的margin-right为负的li间距值。</li>
+<li>父元素ul使用overflow:hidden;形成bfc，以清除浮动带来的影响（父元素塌陷）。</li>
+<li>margin-bottom和margin-top的配合，是同right的理的，消除最后一排li撑开的底边距。</li>
+<li>li要浮动。外边距方向和ul设置负值的外边距方向一致。</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    width: 940px;</span><br><span class="line">  &#125;</span><br><span class="line">  ul&#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    margin-right: -20px;</span><br><span class="line"></span><br><span class="line">    margin-bottom: -20px;</span><br><span class="line">    margin-top: 0;</span><br><span class="line">  &#125;</span><br><span class="line">  .box li&#123;</span><br><span class="line">    float: left;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    margin-right: 20px;</span><br><span class="line">    margin-bottom: 20px;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 
       
 
