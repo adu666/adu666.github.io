@@ -205,6 +205,533 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-根据两个经纬度计算距离" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/20/%E6%A0%B9%E6%8D%AE%E4%B8%A4%E4%B8%AA%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%AE%A1%E7%AE%97%E8%B7%9D%E7%A6%BB/">js经纬度换算距离</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/20/%E6%A0%B9%E6%8D%AE%E4%B8%A4%E4%B8%AA%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%AE%A1%E7%AE%97%E8%B7%9D%E7%A6%BB/" class="archive-article-date">
+  	<time datetime="2021-09-20T15:49:50.879Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、距离换算-两个经纬度没有先后顺序，都可以"><a href="#一、距离换算-两个经纬度没有先后顺序，都可以" class="headerlink" title="一、距离换算 两个经纬度没有先后顺序，都可以"></a>一、距离换算 两个经纬度没有先后顺序，都可以</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function Rad(d) &#123;</span><br><span class="line">  return d * Math.PI &#x2F; 180.0;&#x2F;&#x2F;经纬度转换成三角函数中度分表形式。</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;计算距离，参数分别为第一点的纬度，经度；第二点的纬度，经度</span><br><span class="line">export function GetDistance(lat1, lng1, lat2, lng2) &#123;</span><br><span class="line">  var radLat1 &#x3D; Rad(lat1);</span><br><span class="line">  var radLat2 &#x3D; Rad(lat2);</span><br><span class="line">  var a &#x3D; radLat1 - radLat2;</span><br><span class="line">  var b &#x3D; Rad(lng1) - Rad(lng2);</span><br><span class="line">  var s &#x3D; 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a &#x2F; 2), 2) +</span><br><span class="line">    Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b &#x2F; 2), 2)));</span><br><span class="line">  s &#x3D; s * 6378.137;&#x2F;&#x2F; EARTH_RADIUS;</span><br><span class="line">  s &#x3D; Math.round(s * 10000) &#x2F; 10000; &#x2F;&#x2F;输出为公里</span><br><span class="line">  s &#x3D; s.toFixed(2);</span><br><span class="line">  if (s &gt; 1) &#123;</span><br><span class="line">    s &#x3D; s + &#39;km&#39;</span><br><span class="line">  &#125; else if (s &lt; 1) &#123;</span><br><span class="line">    s &#x3D; s * 1000 + &#39;m&#39;</span><br><span class="line">  &#125;</span><br><span class="line">  return s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JS小技巧</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/20/%E6%A0%B9%E6%8D%AE%E4%B8%A4%E4%B8%AA%E7%BB%8F%E7%BA%AC%E5%BA%A6%E8%AE%A1%E7%AE%97%E8%B7%9D%E7%A6%BB/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-小程序开发总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/20/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">小程序开发总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/20/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-09-20T15:49:50.878Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>待完善</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/20/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts方法总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/20/ts%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">Typescript开发总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/20/ts%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-09-20T15:49:50.878Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>待完善</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Typescript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/20/ts%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-node开发总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/20/node%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">NODE开发总结</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/20/node%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-09-20T15:49:50.878Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>待完善</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Node</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/20/node%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js日期处理总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/20/js%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/">js获取当前时间,js时间函数</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/20/js%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2021-09-20T15:49:50.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、Js获取当前日期时间及其它操作，js时间函数"><a href="#一、Js获取当前日期时间及其它操作，js时间函数" class="headerlink" title="一、Js获取当前日期时间及其它操作，js时间函数"></a>一、Js获取当前日期时间及其它操作，js时间函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var myDate &#x3D; new Date();</span><br><span class="line">    myDate.getYear(); &#x2F;&#x2F;获取当前年份(2位)</span><br><span class="line">    myDate.getFullYear(); &#x2F;&#x2F;获取完整的年份(4位,1970-????)</span><br><span class="line">    myDate.getMonth(); &#x2F;&#x2F;获取当前月份(0-11,0代表1月)</span><br><span class="line">    myDate.getDate(); &#x2F;&#x2F;获取当前日(1-31)</span><br><span class="line">    myDate.getDay(); &#x2F;&#x2F;获取当前星期X(0-6,0代表星期天)</span><br><span class="line">    myDate.getTime(); &#x2F;&#x2F;获取当前时间(从1970.1.1开始的毫秒数)</span><br><span class="line">    myDate.getHours(); &#x2F;&#x2F;获取当前小时数(0-23)</span><br><span class="line">    myDate.getMinutes(); &#x2F;&#x2F;获取当前分钟数(0-59)</span><br><span class="line">    myDate.getSeconds(); &#x2F;&#x2F;获取当前秒数(0-59)</span><br><span class="line">    myDate.getMilliseconds(); &#x2F;&#x2F;获取当前毫秒数(0-999)</span><br><span class="line">    myDate.toLocaleDateString(); &#x2F;&#x2F;获取当前日期</span><br><span class="line">    var mytime&#x3D;myDate.toLocaleTimeString(); &#x2F;&#x2F;获取当前时间</span><br><span class="line">    myDate.toLocaleString( ); &#x2F;&#x2F;获取日期与时间</span><br></pre></td></tr></table></figure>
+
+<h3 id="日期时间脚本库方法列表"><a href="#日期时间脚本库方法列表" class="headerlink" title="日期时间脚本库方法列表"></a>日期时间脚本库方法列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Date.prototype.isLeapYear 判断闰年</span><br><span class="line">Date.prototype.Format 日期格式化</span><br><span class="line">Date.prototype.DateAdd 日期计算</span><br><span class="line">Date.prototype.DateDiff 比较日期差</span><br><span class="line">Date.prototype.toString 日期转字符串</span><br><span class="line">Date.prototype.toArray 日期分割为数组</span><br><span class="line">Date.prototype.DatePart 取日期的部分信息</span><br><span class="line">Date.prototype.MaxDayOfDate 取日期所在月的最大天数</span><br><span class="line">Date.prototype.WeekNumOfYear 判断日期所在年的第几周</span><br><span class="line">StringToDate 字符串转日期型</span><br><span class="line">IsValidDate 验证日期有效性</span><br><span class="line">CheckDateTime 完整日期时间检查</span><br><span class="line">daysBetween 日期天数差</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;—————————————————</span><br><span class="line">&#x2F;&#x2F; 判断闰年</span><br><span class="line">&#x2F;&#x2F;—————————————————</span><br><span class="line">Date.prototype.isLeapYear &#x3D; function()</span><br><span class="line">&#123;</span><br><span class="line">return (0&#x3D;&#x3D;this.getYear()%4&amp;&amp;((this.getYear()%100!&#x3D;0)||(this.getYear()%400&#x3D;&#x3D;0)));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;—————————————————</span><br><span class="line">&#x2F;&#x2F; 日期格式化</span><br><span class="line">&#x2F;&#x2F; 格式 YYYY&#x2F;yyyy&#x2F;YY&#x2F;yy 表示年份</span><br><span class="line">&#x2F;&#x2F; MM&#x2F;M 月份</span><br><span class="line">&#x2F;&#x2F; W&#x2F;w 星期</span><br><span class="line">&#x2F;&#x2F; dd&#x2F;DD&#x2F;d&#x2F;D 日期</span><br><span class="line">&#x2F;&#x2F; hh&#x2F;HH&#x2F;h&#x2F;H 时间</span><br><span class="line">&#x2F;&#x2F; mm&#x2F;m 分钟</span><br><span class="line">&#x2F;&#x2F; ss&#x2F;SS&#x2F;s&#x2F;S 秒</span><br><span class="line">&#x2F;&#x2F;—————————————————</span><br><span class="line">Date.prototype.Format &#x3D; function(formatStr)</span><br><span class="line">&#123;</span><br><span class="line">var str &#x3D; formatStr;</span><br><span class="line">var Week &#x3D; [&#39;日&#39;,&#39;一&#39;,&#39;二&#39;,&#39;三&#39;,&#39;四&#39;,&#39;五&#39;,&#39;六&#39;];</span><br><span class="line"> </span><br><span class="line">str&#x3D;str.replace(&#x2F;yyyy|YYYY&#x2F;,this.getFullYear());</span><br><span class="line">str&#x3D;str.replace(&#x2F;yy|YY&#x2F;,(this.getYear() % 100)&gt;9?(this.getYear() % 100).toString():’0′ + (this.getYear() % 100));</span><br><span class="line"> </span><br><span class="line">str&#x3D;str.replace(&#x2F;MM&#x2F;,this.getMonth()&gt;9?this.getMonth().toString():’0′ + this.getMonth());</span><br><span class="line">str&#x3D;str.replace(&#x2F;M&#x2F;g,this.getMonth());</span><br><span class="line"> </span><br><span class="line">str&#x3D;str.replace(&#x2F;w|W&#x2F;g,Week[this.getDay()]);</span><br><span class="line"> </span><br><span class="line">str&#x3D;str.replace(&#x2F;dd|DD&#x2F;,this.getDate()&gt;9?this.getDate().toString():’0′ + this.getDate());</span><br><span class="line">str&#x3D;str.replace(&#x2F;d|D&#x2F;g,this.getDate());</span><br><span class="line"> </span><br><span class="line">str&#x3D;str.replace(&#x2F;hh|HH&#x2F;,this.getHours()&gt;9?this.getHours().toString():’0′ + this.getHours());</span><br><span class="line">str&#x3D;str.replace(&#x2F;h|H&#x2F;g,this.getHours());</span><br><span class="line">str&#x3D;str.replace(&#x2F;mm&#x2F;,this.getMinutes()&gt;9?this.getMinutes().toString():’0′ + this.getMinutes());</span><br><span class="line">str&#x3D;str.replace(&#x2F;m&#x2F;g,this.getMinutes());</span><br><span class="line"> </span><br><span class="line">str&#x3D;str.replace(&#x2F;ss|SS&#x2F;,this.getSeconds()&gt;9?this.getSeconds().toString():’0′ + this.getSeconds());</span><br><span class="line">str&#x3D;str.replace(&#x2F;s|S&#x2F;g,this.getSeconds());</span><br><span class="line"> </span><br><span class="line">return str;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 求两个时间的天数差 日期格式为 YYYY-MM-dd</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">function daysBetween(DateOne,DateTwo)</span><br><span class="line">&#123;</span><br><span class="line">var OneMonth &#x3D; DateOne.substring(5,DateOne.lastIndexOf (‘-’));</span><br><span class="line">var OneDay &#x3D; DateOne.substring(DateOne.length,DateOne.lastIndexOf (‘-’)+1);</span><br><span class="line">var OneYear &#x3D; DateOne.substring(0,DateOne.indexOf (‘-’));</span><br><span class="line"> </span><br><span class="line">var TwoMonth &#x3D; DateTwo.substring(5,DateTwo.lastIndexOf (‘-’));</span><br><span class="line">var TwoDay &#x3D; DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf (‘-’)+1);</span><br><span class="line">var TwoYear &#x3D; DateTwo.substring(0,DateTwo.indexOf (‘-’));</span><br><span class="line"> </span><br><span class="line">var cha&#x3D;((Date.parse(OneMonth+’&#x2F;&#39;+OneDay+’&#x2F;&#39;+OneYear)- Date.parse(TwoMonth+’&#x2F;&#39;+TwoDay+’&#x2F;&#39;+TwoYear))&#x2F;86400000);</span><br><span class="line">return Math.abs(cha);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 日期计算</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">Date.prototype.DateAdd &#x3D; function(strInterval, Number) &#123;</span><br><span class="line">var dtTmp &#x3D; this;</span><br><span class="line">switch (strInterval) &#123;</span><br><span class="line">case ‘s’ :return new Date(Date.parse(dtTmp) + (1000 * Number));</span><br><span class="line">case ‘n’ :return new Date(Date.parse(dtTmp) + (60000 * Number));</span><br><span class="line">case ‘h’ :return new Date(Date.parse(dtTmp) + (3600000 * Number));</span><br><span class="line">case ‘d’ :return new Date(Date.parse(dtTmp) + (86400000 * Number));</span><br><span class="line">case ‘w’ :return new Date(Date.parse(dtTmp) + ((86400000 * 7) * Number));</span><br><span class="line">case ‘q’ :return new Date(dtTmp.getFullYear(), (dtTmp.getMonth()) + Number*3, dtTmp.getDate(), dtTmp.getHours(), dtTmp.getMinutes(), dtTmp.getSeconds());</span><br><span class="line">case ‘m’ :return new Date(dtTmp.getFullYear(), (dtTmp.getMonth()) + Number, dtTmp.getDate(), dtTmp.getHours(), dtTmp.getMinutes(), dtTmp.getSeconds());</span><br><span class="line">case ‘y’ :return new Date((dtTmp.getFullYear() + Number), dtTmp.getMonth(), dtTmp.getDate(), dtTmp.getHours(), dtTmp.getMinutes(), dtTmp.getSeconds());</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 比较日期差 dtEnd 格式为日期型或者有效日期格式字符串</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">Date.prototype.DateDiff &#x3D; function(strInterval, dtEnd) &#123;</span><br><span class="line">var dtStart &#x3D; this;</span><br><span class="line">if (typeof dtEnd &#x3D;&#x3D; ‘string’ )&#x2F;&#x2F;如果是字符串转换为日期型</span><br><span class="line">&#123;</span><br><span class="line">dtEnd &#x3D; StringToDate(dtEnd);</span><br><span class="line">&#125;</span><br><span class="line">switch (strInterval) &#123;</span><br><span class="line">case ‘s’ :return parseInt((dtEnd – dtStart) &#x2F; 1000);</span><br><span class="line">case ‘n’ :return parseInt((dtEnd – dtStart) &#x2F; 60000);</span><br><span class="line">case ‘h’ :return parseInt((dtEnd – dtStart) &#x2F; 3600000);</span><br><span class="line">case ‘d’ :return parseInt((dtEnd – dtStart) &#x2F; 86400000);</span><br><span class="line">case ‘w’ :return parseInt((dtEnd – dtStart) &#x2F; (86400000 * 7));</span><br><span class="line">case ‘m’ :return (dtEnd.getMonth()+1)+((dtEnd.getFullYear()-dtStart.getFullYear())*12) – (dtStart.getMonth()+1);</span><br><span class="line">case ‘y’ :return dtEnd.getFullYear() – dtStart.getFullYear();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 日期输出字符串，重载了系统的toString方法</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">Date.prototype.toString &#x3D; function(showWeek)</span><br><span class="line">&#123;</span><br><span class="line">var myDate&#x3D; this;</span><br><span class="line">var str &#x3D; myDate.toLocaleDateString();</span><br><span class="line">if (showWeek)</span><br><span class="line">&#123;</span><br><span class="line">var Week &#x3D; [&#39;日&#39;,&#39;一&#39;,&#39;二&#39;,&#39;三&#39;,&#39;四&#39;,&#39;五&#39;,&#39;六&#39;];</span><br><span class="line">str +&#x3D; ‘ 星期’ + Week[myDate.getDay()];</span><br><span class="line">&#125;</span><br><span class="line">return str;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 日期合法性验证</span><br><span class="line">&#x2F;&#x2F;| 格式为：YYYY-MM-DD或YYYY&#x2F;MM&#x2F;DD</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">function IsValidDate(DateStr)</span><br><span class="line">&#123;</span><br><span class="line">var sDate&#x3D;DateStr.replace(&#x2F;(^\s+|\s+$)&#x2F;g,”); &#x2F;&#x2F;去两边空格;</span><br><span class="line">if(sDate&#x3D;&#x3D;”) return true;</span><br><span class="line">&#x2F;&#x2F;如果格式满足YYYY-(&#x2F;)MM-(&#x2F;)DD或YYYY-(&#x2F;)M-(&#x2F;)DD或YYYY-(&#x2F;)M-(&#x2F;)D或YYYY-(&#x2F;)MM-(&#x2F;)D就替换为”</span><br><span class="line">&#x2F;&#x2F;数据库中，合法日期可以是:YYYY-MM&#x2F;DD(2003-3&#x2F;21),数据库会自动转换为YYYY-MM-DD格式</span><br><span class="line">var s &#x3D; sDate.replace(&#x2F;[\d]&#123; 4,4 &#125;[\-&#x2F;]&#123; 1 &#125;[\d]&#123; 1,2 &#125;[\-&#x2F;]&#123; 1 &#125;[\d]&#123; 1,2 &#125;&#x2F;g,”);</span><br><span class="line">if (s&#x3D;&#x3D;”) &#x2F;&#x2F;说明格式满足YYYY-MM-DD或YYYY-M-DD或YYYY-M-D或YYYY-MM-D</span><br><span class="line">&#123;</span><br><span class="line">var t&#x3D;new Date(sDate.replace(&#x2F;\-&#x2F;g,’&#x2F;&#39;));</span><br><span class="line">var ar &#x3D; sDate.split(&#x2F;[-&#x2F;:]&#x2F;);</span><br><span class="line">if(ar[0] !&#x3D; t.getYear() || ar[1] !&#x3D; t.getMonth()+1 || ar[2] !&#x3D; t.getDate())</span><br><span class="line">&#123;</span><br><span class="line">&#x2F;&#x2F;alert(‘错误的日期格式！格式为：YYYY-MM-DD或YYYY&#x2F;MM&#x2F;DD。注意闰年。’);</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">&#x2F;&#x2F;alert(‘错误的日期格式！格式为：YYYY-MM-DD或YYYY&#x2F;MM&#x2F;DD。注意闰年。’);</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 日期时间检查</span><br><span class="line">&#x2F;&#x2F;| 格式为：YYYY-MM-DD HH:MM:SS</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">function CheckDateTime(str)</span><br><span class="line">&#123;</span><br><span class="line">var reg &#x3D; &#x2F;^(\d+)-(\d&#123; 1,2 &#125;)-(\d&#123; 1,2 &#125;) (\d&#123; 1,2 &#125;):(\d&#123; 1,2 &#125;):(\d&#123; 1,2 &#125;)$&#x2F;;</span><br><span class="line">var r &#x3D; str.match(reg);</span><br><span class="line">if(r&#x3D;&#x3D;null)return false;</span><br><span class="line">r[2]&#x3D;r[2]-1;</span><br><span class="line">var d&#x3D; new Date(r[1],r[2],r[3],r[4],r[5],r[6]);</span><br><span class="line">if(d.getFullYear()!&#x3D;r[1])return false;</span><br><span class="line">if(d.getMonth()!&#x3D;r[2])return false;</span><br><span class="line">if(d.getDate()!&#x3D;r[3])return false;</span><br><span class="line">if(d.getHours()!&#x3D;r[4])return false;</span><br><span class="line">if(d.getMinutes()!&#x3D;r[5])return false;</span><br><span class="line">if(d.getSeconds()!&#x3D;r[6])return false;</span><br><span class="line">return true;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 把日期分割成数组</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">Date.prototype.toArray &#x3D; function()</span><br><span class="line">&#123;</span><br><span class="line">var myDate &#x3D; this;</span><br><span class="line">var myArray &#x3D; Array();</span><br><span class="line">myArray[0] &#x3D; myDate.getFullYear();</span><br><span class="line">myArray[1] &#x3D; myDate.getMonth();</span><br><span class="line">myArray[2] &#x3D; myDate.getDate();</span><br><span class="line">myArray[3] &#x3D; myDate.getHours();</span><br><span class="line">myArray[4] &#x3D; myDate.getMinutes();</span><br><span class="line">myArray[5] &#x3D; myDate.getSeconds();</span><br><span class="line">return myArray;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 取得日期数据信息</span><br><span class="line">&#x2F;&#x2F;| 参数 interval 表示数据类型</span><br><span class="line">&#x2F;&#x2F;| y 年 m月 d日 w星期 ww周 h时 n分 s秒</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">Date.prototype.DatePart &#x3D; function(interval)</span><br><span class="line">&#123;</span><br><span class="line">var myDate &#x3D; this;</span><br><span class="line">var partStr&#x3D;”;</span><br><span class="line">var Week &#x3D; [&#39;日&#39;,&#39;一&#39;,&#39;二&#39;,&#39;三&#39;,&#39;四&#39;,&#39;五&#39;,&#39;六&#39;];</span><br><span class="line">switch (interval)</span><br><span class="line">&#123;</span><br><span class="line">case ‘y’ :partStr &#x3D; myDate.getFullYear();break;</span><br><span class="line">case ‘m’ :partStr &#x3D; myDate.getMonth()+1;break;</span><br><span class="line">case ‘d’ :partStr &#x3D; myDate.getDate();break;</span><br><span class="line">case ‘w’ :partStr &#x3D; Week[myDate.getDay()];break;</span><br><span class="line">case ‘ww’ :partStr &#x3D; myDate.WeekNumOfYear();break;</span><br><span class="line">case ‘h’ :partStr &#x3D; myDate.getHours();break;</span><br><span class="line">case ‘n’ :partStr &#x3D; myDate.getMinutes();break;</span><br><span class="line">case ‘s’ :partStr &#x3D; myDate.getSeconds();break;</span><br><span class="line">&#125;</span><br><span class="line">return partStr;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 取得当前日期所在月的最大天数</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">Date.prototype.MaxDayOfDate &#x3D; function()</span><br><span class="line">&#123;</span><br><span class="line">var myDate &#x3D; this;</span><br><span class="line">var ary &#x3D; myDate.toArray();</span><br><span class="line">var date1 &#x3D; (new Date(ary[0],ary[1]+1,1));</span><br><span class="line">var date2 &#x3D; date1.dateAdd(1,’m&#39;,1);</span><br><span class="line">var result &#x3D; dateDiff(date1.Format(‘yyyy-MM-dd’),date2.Format(‘yyyy-MM-dd’));</span><br><span class="line">return result;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 取得当前日期所在周是一年中的第几周</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">Date.prototype.WeekNumOfYear &#x3D; function()</span><br><span class="line">&#123;</span><br><span class="line">var myDate &#x3D; this;</span><br><span class="line">var ary &#x3D; myDate.toArray();</span><br><span class="line">var year &#x3D; ary[0];</span><br><span class="line">var month &#x3D; ary[1]+1;</span><br><span class="line">var day &#x3D; ary[2];</span><br><span class="line">document.write(‘&lt; script language&#x3D;VBScript\&gt; \n’);</span><br><span class="line">document.write(‘myDate &#x3D; Datue(”+month+’-&#39;+day+’-&#39;+year+”) \n’);</span><br><span class="line">document.write(‘result &#x3D; DatePart(‘ww’, myDate) \n’);</span><br><span class="line">document.write(‘ \n’);</span><br><span class="line">return result;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">&#x2F;&#x2F;| 字符串转成日期类型</span><br><span class="line">&#x2F;&#x2F;| 格式 MM&#x2F;dd&#x2F;YYYY MM-dd-YYYY YYYY&#x2F;MM&#x2F;dd YYYY-MM-dd</span><br><span class="line">&#x2F;&#x2F;+—————————————————</span><br><span class="line">function StringToDate(DateStr)</span><br><span class="line">&#123;</span><br><span class="line"> </span><br><span class="line">var converted &#x3D; Date.parse(DateStr);</span><br><span class="line">var myDate &#x3D; new Date(converted);</span><br><span class="line">if (isNaN(myDate))</span><br><span class="line">&#123;</span><br><span class="line">&#x2F;&#x2F;var delimCahar &#x3D; DateStr.indexOf(‘&#x2F;’)!&#x3D;-1?’&#x2F;&#39;:’-&#39;;</span><br><span class="line">var arys&#x3D; DateStr.split(‘-’);</span><br><span class="line">myDate &#x3D; new Date(arys[0],–arys[1],arys[2]);</span><br><span class="line">&#125;</span><br><span class="line">return myDate;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">若要显示:当前日期加时间(如:2009-06-12 12:00)</span><br><span class="line"> </span><br><span class="line">function CurentTime()</span><br><span class="line">&#123;</span><br><span class="line">var now &#x3D; new Date();</span><br><span class="line"> </span><br><span class="line">var year &#x3D; now.getFullYear(); &#x2F;&#x2F;年</span><br><span class="line">var month &#x3D; now.getMonth() + 1; &#x2F;&#x2F;月</span><br><span class="line">var day &#x3D; now.getDate(); &#x2F;&#x2F;日</span><br><span class="line"> </span><br><span class="line">var hh &#x3D; now.getHours(); &#x2F;&#x2F;时</span><br><span class="line">var mm &#x3D; now.getMinutes(); &#x2F;&#x2F;分</span><br><span class="line"> </span><br><span class="line">var clock &#x3D; year + “-”;</span><br><span class="line"> </span><br><span class="line">if(month &lt; 10)</span><br><span class="line">clock +&#x3D; “0″;</span><br><span class="line"> </span><br><span class="line">clock +&#x3D; month + “-”;</span><br><span class="line"> </span><br><span class="line">if(day &lt; 10)</span><br><span class="line">clock +&#x3D; “0″;</span><br><span class="line"> </span><br><span class="line">clock +&#x3D; day + ” “;</span><br><span class="line"> </span><br><span class="line">if(hh &lt; 10)</span><br><span class="line">clock +&#x3D; “0″;</span><br><span class="line"> </span><br><span class="line">clock +&#x3D; hh + “:”;</span><br><span class="line">if (mm &lt; 10) clock +&#x3D; ’0′;</span><br><span class="line">clock +&#x3D; mm;</span><br><span class="line">return(clock);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JS小技巧</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/20/js%E6%97%A5%E6%9C%9F%E5%A4%84%E7%90%86%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js找出两个数组的共同项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/20/js%E6%89%BE%E5%87%BA%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%85%B1%E5%90%8C%E9%A1%B9/">Js找出数组中的共同项</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/20/js%E6%89%BE%E5%87%BA%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%85%B1%E5%90%8C%E9%A1%B9/" class="archive-article-date">
+  	<time datetime="2021-09-20T15:49:50.877Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、Js找出数组中的共同项"><a href="#一、Js找出数组中的共同项" class="headerlink" title="一、Js找出数组中的共同项"></a>一、Js找出数组中的共同项</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FilterData(a, b) &#123;</span><br><span class="line">      &#x2F;&#x2F;循环判断数组a里的元素在b里面有没有，有的话就放入新建立的数组中</span><br><span class="line">      var result &#x3D; new Array();</span><br><span class="line">      var c &#x3D; b.toString();</span><br><span class="line">      for (var i &#x3D; 0; i &lt; a.length; i++) &#123;</span><br><span class="line">        if (c.indexOf(a[i].cityCodeId.toString()) &gt; -1) &#123;</span><br><span class="line">          result.push(&#123;</span><br><span class="line">            cityCodeId: a[i].cityCodeId,</span><br><span class="line">            cityProId: a[i].cityProId,</span><br><span class="line">          &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JS小技巧</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/20/js%E6%89%BE%E5%87%BA%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%85%B1%E5%90%8C%E9%A1%B9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6 数组some()和every()使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/09/20/ES6%20%E6%95%B0%E7%BB%84some()%E5%92%8Cevery()%E4%BD%BF%E7%94%A8/">ES6 数组some()和every()使用</a>
+    </h1>
+  
+
+        
+        <a href="/2021/09/20/ES6%20%E6%95%B0%E7%BB%84some()%E5%92%8Cevery()%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2021-09-20T15:49:50.876Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="some-英语翻译为一些-every翻译为所有-每个，所以some方法-只要其中一个为true-就会返回true的，相反，every（）方法必须所有都返回true才会返回true，哪怕有一个false，就会返回false；every（）和-some（）目的：确定数组的所有成员是否满足指定的测试"><a href="#some-英语翻译为一些-every翻译为所有-每个，所以some方法-只要其中一个为true-就会返回true的，相反，every（）方法必须所有都返回true才会返回true，哪怕有一个false，就会返回false；every（）和-some（）目的：确定数组的所有成员是否满足指定的测试" class="headerlink" title="some 英语翻译为一些,every翻译为所有,每个，所以some方法 只要其中一个为true 就会返回true的，相反，every（）方法必须所有都返回true才会返回true，哪怕有一个false，就会返回false；every（）和 some（）目的：确定数组的所有成员是否满足指定的测试"></a>some 英语翻译为一些,every翻译为所有,每个，所以some方法 只要其中一个为true 就会返回true的，相反，every（）方法必须所有都返回true才会返回true，哪怕有一个false，就会返回false；every（）和 some（）目的：确定数组的所有成员是否满足指定的测试</h3><ul>
+<li><p>every:一假即假</p>
+</li>
+<li><p>some:一真即真</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;** </span><br><span class="line"> * 计算对象数组中每个电脑的扣件系统是否可用,大于16位操作系统表示可用,否则不可用</span><br><span class="line">*&#x2F;</span><br><span class="line">var computers &#x3D; [</span><br><span class="line">    &#123;name:&quot;Apple&quot;,ram:8&#125;,</span><br><span class="line">    &#123;name:&quot;IBM&quot;,ram:4&#125;,</span><br><span class="line">    &#123;name:&quot;Acer&quot;,ram:32&#125;,</span><br><span class="line">];</span><br><span class="line"> var result&#x3D; computers.every(function(computer)&#123;</span><br><span class="line">   return computer.ram &gt; 16</span><br><span class="line">&#125;)</span><br><span class="line">console.log(result)&#x2F;&#x2F;false;</span><br><span class="line">var some &#x3D; computers.some(function(computer)&#123;</span><br><span class="line">   return computer.ram &gt; 16</span><br><span class="line">&#125;)</span><br><span class="line">console.log(some)&#x2F;&#x2F;true;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/09/20/ES6%20%E6%95%B0%E7%BB%84some()%E5%92%8Cevery()%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-css文本处理方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,9 +782,7 @@
 <li>vertical-rl：垂直方向自右而左的书写方式。即 top-bottom-right-left</li>
 <li>vertical-lr：垂直方向内内容从上到下，水平方向从左到右</li>
 <li>sideways-rl：内容垂直方向从上到下排列</li>
-<li>sideways-lr：内容垂直方向从下到上排列<blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;bruce flex-ct-x&quot;&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;vertical-text&quot;&gt;</span><br><span class="line">  &lt;h3&gt;诗经&lt;&#x2F;h3&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"> 死生契阔，&lt;br&gt;</span><br><span class="line"> 与子成说。&lt;br&gt;</span><br><span class="line"> 执子之手，&lt;br&gt;</span><br><span class="line"> 与子偕老。</span><br><span class="line"> &lt;&#x2F;p&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.vertical-text &#123;</span><br><span class="line"> writing-mode: vertical-rl; &#x2F;&#x2F; 文字排版方向</span><br><span class="line"> h3 &#123;</span><br><span class="line">  padding-left: 10px;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  color: #d60f5c;</span><br><span class="line"> &#125;</span><br><span class="line"> p &#123;</span><br><span class="line">  line-height: 30px; &#x2F;&#x2F; 行间距</span><br><span class="line"> letter-spacing: 7px; &#x2F;&#x2F; 文字间距</span><br><span class="line">  color: #ee1166;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>sideways-lr：内容垂直方向从下到上排列<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;bruce flex-ct-x&quot;&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;vertical-text&quot;&gt;</span><br><span class="line">  &lt;h3&gt;诗经&lt;&#x2F;h3&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"> 死生契阔，&lt;br&gt;</span><br><span class="line"> 与子成说。&lt;br&gt;</span><br><span class="line"> 执子之手，&lt;br&gt;</span><br><span class="line"> 与子偕老。</span><br><span class="line"> &lt;&#x2F;p&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.vertical-text &#123;</span><br><span class="line"> writing-mode: vertical-rl; &#x2F;&#x2F; 文字排版方向</span><br><span class="line"> h3 &#123;</span><br><span class="line">  padding-left: 10px;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  color: #d60f5c;</span><br><span class="line"> &#125;</span><br><span class="line"> p &#123;</span><br><span class="line">  line-height: 30px; &#x2F;&#x2F; 行间距</span><br><span class="line"> letter-spacing: 7px; &#x2F;&#x2F; 文字间距</span><br><span class="line">  color: #ee1166;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -520,527 +1045,10 @@
 
 
   
-    <article id="post-JSON数组分割" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/18/JSON%E6%95%B0%E7%BB%84%E5%88%86%E5%89%B2/">前端JSON数组根据某个字段分割,返回新的数组</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/18/JSON%E6%95%B0%E7%BB%84%E5%88%86%E5%89%B2/" class="archive-article-date">
-  	<time datetime="2021-09-18T12:16:50.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、第一种方法"><a href="#一、第一种方法" class="headerlink" title="一、第一种方法"></a>一、第一种方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">sort_pro(data, keys &#x3D; []) &#123;</span><br><span class="line">     &#x2F;&#x2F;keys可以传一个数组</span><br><span class="line">     var c &#x3D; [];</span><br><span class="line">     var d &#x3D; &#123;&#125;;</span><br><span class="line">     for (var element of data) &#123;</span><br><span class="line">       let element_keyStr &#x3D; &quot;&quot;;</span><br><span class="line">       let element_key &#x3D; [];</span><br><span class="line">       let element_keyObj &#x3D; &#123;&#125;;</span><br><span class="line">       for (var key of keys) &#123;</span><br><span class="line">         element_key.push(element[key]);</span><br><span class="line">         element_keyObj[key] &#x3D; element[key];</span><br><span class="line">       &#125;</span><br><span class="line">       element_keyStr &#x3D; element_key.join(&quot;_&quot;);</span><br><span class="line">       if (!d[element_keyStr]) &#123;</span><br><span class="line">         c.push(&#123;</span><br><span class="line">           ...element_keyObj,</span><br><span class="line">           children: [element],</span><br><span class="line">         &#125;);</span><br><span class="line">         d[element_keyStr] &#x3D; element;</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">         for (var ele of c) &#123;</span><br><span class="line">           let isTrue &#x3D; keys.some((key) &#x3D;&gt; &#123;</span><br><span class="line">             return ele[key] !&#x3D; element[key];</span><br><span class="line">           &#125;);</span><br><span class="line">           if (!isTrue) &#123;</span><br><span class="line">             ele.children.push(element);</span><br><span class="line">           &#125;</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     return c;</span><br><span class="line">   &#125;,</span><br><span class="line">   this.sort_pro(list, [&quot;showMonth&quot;]); &#x2F;&#x2F;第一个参数是数组，第二个是需要分割的元素名称</span><br></pre></td></tr></table></figure>
-<h3 id="二、第二种方法"><a href="#二、第二种方法" class="headerlink" title="二、第二种方法"></a>二、第二种方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let map &#x3D; &#123;&#125;;</span><br><span class="line">for (let i &#x3D; 0; i &lt;  this.dataList.length; i++) &#123;</span><br><span class="line">  let ai &#x3D;  this.dataList[i];</span><br><span class="line">  if (!map[ai.showMonth]) &#123;</span><br><span class="line">    map[ai.showMonth] &#x3D; [ai];</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    map[ai.showMonth].push(ai);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">let newRes &#x3D; [];</span><br><span class="line">Object.keys(map).forEach((key) &#x3D;&gt; &#123;</span><br><span class="line">  newRes.push(...map[key]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JS小技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/18/JSON%E6%95%B0%E7%BB%84%E5%88%86%E5%89%B2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue开发总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/18/Vue%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">Vue开发总结</a>
-    </h1>
-  
-
-        
-        <a href="/2021/09/18/Vue%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2021-09-18T12:16:50.720Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Vue日常开发中的经验总结</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/18/Vue%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-开发常用工具合集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/16/%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/">前端常用工具总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/16/%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/" class="archive-article-date">
-  	<time datetime="2020-02-15T16:22:44.440Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一-、图片压缩工具可以成批量压缩，图片清晰度不变"><a href="#一-、图片压缩工具可以成批量压缩，图片清晰度不变" class="headerlink" title="一 、图片压缩工具可以成批量压缩，图片清晰度不变"></a>一 、图片压缩工具可以成批量压缩，图片清晰度不变</h3><ul>
-<li>链接地址 <a href="https://tinypng.com/" target="_blank" rel="noopener">点击跳转</a> </li>
-</ul>
-<h3 id="二-、视频，音频剪辑工具，可免费剪辑，压缩"><a href="#二-、视频，音频剪辑工具，可免费剪辑，压缩" class="headerlink" title="二 、视频，音频剪辑工具，可免费剪辑，压缩"></a>二 、视频，音频剪辑工具，可免费剪辑，压缩</h3><ul>
-<li>链接地址 <a href="https://mp3cut.net/cn/" target="_blank" rel="noopener">点击跳转</a> </li>
-</ul>
-<h3 id="三-、二维码生成工具"><a href="#三-、二维码生成工具" class="headerlink" title="三 、二维码生成工具"></a>三 、二维码生成工具</h3><ul>
-<li>链接地址 <a href="https://cli.im/" target="_blank" rel="noopener">点击跳转</a> </li>
-</ul>
-<h3 id="四-、在线RGB、HEX颜色代码生成器"><a href="#四-、在线RGB、HEX颜色代码生成器" class="headerlink" title="四 、在线RGB、HEX颜色代码生成器"></a>四 、在线RGB、HEX颜色代码生成器</h3><ul>
-<li>链接地址 <a href="http://tools.jb51.net/color/rgb_color_generator" target="_blank" rel="noopener">点击跳转</a> </li>
-</ul>
-<h3 id="五-、正则表达式在线生成工具"><a href="#五-、正则表达式在线生成工具" class="headerlink" title="五 、正则表达式在线生成工具"></a>五 、正则表达式在线生成工具</h3><ul>
-<li>链接地址 <a href="http://tools.jb51.net/regex/create_reg" target="_blank" rel="noopener">点击跳转</a> </li>
-</ul>
-<h3 id="六-、ICO图标在线生成工具"><a href="#六-、ICO图标在线生成工具" class="headerlink" title="六 、ICO图标在线生成工具"></a>六 、ICO图标在线生成工具</h3><ul>
-<li>链接地址 <a href="http://tools.jb51.net/aideddesign/ico_img" target="_blank" rel="noopener">点击跳转</a> </li>
-</ul>
-<h3 id="七-、Unix时间戳-timestamp-转换工具"><a href="#七-、Unix时间戳-timestamp-转换工具" class="headerlink" title="七 、Unix时间戳(timestamp)转换工具"></a>七 、Unix时间戳(timestamp)转换工具</h3><ul>
-<li>链接地址 <a href="http://tools.jb51.net/code/unixtime" target="_blank" rel="noopener">点击跳转</a></li>
-</ul>
-<h3 id="八-、图片放大工具，放大图片大小"><a href="#八-、图片放大工具，放大图片大小" class="headerlink" title="八 、图片放大工具，放大图片大小"></a>八 、图片放大工具，放大图片大小</h3><ul>
-<li>链接地址 <a href="https://bigjpg.com" target="_blank" rel="noopener">点击跳转</a></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/16/%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%90%88%E9%9B%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js网页防护" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/16/js%E7%BD%91%E9%A1%B5%E9%98%B2%E6%8A%A4/">前端js禁止鼠标右键及F12禁止查看源代码</a>
-    </h1>
-  
-
-        
-        <a href="/2020/02/16/js%E7%BD%91%E9%A1%B5%E9%98%B2%E6%8A%A4/" class="archive-article-date">
-  	<time datetime="2020-02-15T16:02:20.109Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在前端开发中，F12审查元素的情况下，大家都可以随机更改一部分页面的代码，注入恶意JS等等，这种情况避免也不难，虽然还能看到一部分H5源码，但是无法修改。</p>
-<h3 id="一、屏蔽F12-审查元素"><a href="#一、屏蔽F12-审查元素" class="headerlink" title="一、屏蔽F12 审查元素"></a>一、屏蔽F12 审查元素</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">document.onkeydown &#x3D; function () &#123;</span><br><span class="line">        if (window.event &amp;&amp; window.event.keyCode &#x3D;&#x3D; 123) &#123;</span><br><span class="line">            alert(&quot;F12被禁用&quot;);</span><br><span class="line">            event.keyCode &#x3D; 0;</span><br><span class="line">            event.returnValue &#x3D; false;</span><br><span class="line">        &#125;</span><br><span class="line">        if (window.event &amp;&amp; window.event.keyCode &#x3D;&#x3D; 13) &#123;</span><br><span class="line">            window.event.keyCode &#x3D; 505;</span><br><span class="line">        &#125;</span><br><span class="line">        if (window.event &amp;&amp; window.event.keyCode &#x3D;&#x3D; 8) &#123;</span><br><span class="line">            alert(str + &quot;\n请使用Del键进行字符的删除操作！&quot;);</span><br><span class="line">            window.event.returnValue &#x3D; false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="二、屏蔽右键菜单"><a href="#二、屏蔽右键菜单" class="headerlink" title="二、屏蔽右键菜单"></a>二、屏蔽右键菜单</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">document.oncontextmenu &#x3D; function (event) &#123;</span><br><span class="line">        if (window.event) &#123;</span><br><span class="line">            event &#x3D; window.event;</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            var the &#x3D; event.srcElement;</span><br><span class="line">            if (!((the.tagName &#x3D;&#x3D; &quot;INPUT&quot; &amp;&amp; the.type.toLowerCase() &#x3D;&#x3D; &quot;text&quot;) || the.tagName &#x3D;&#x3D; &quot;TEXTAREA&quot;)) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="三、屏蔽粘贴"><a href="#三、屏蔽粘贴" class="headerlink" title="三、屏蔽粘贴"></a>三、屏蔽粘贴</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">document.onpaste &#x3D; function (event) &#123;</span><br><span class="line">        if (window.event) &#123;</span><br><span class="line">            event &#x3D; window.event;</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            var the &#x3D; event.srcElement;</span><br><span class="line">            if (!((the.tagName &#x3D;&#x3D; &quot;INPUT&quot; &amp;&amp; the.type.toLowerCase() &#x3D;&#x3D; &quot;text&quot;) || the.tagName &#x3D;&#x3D; &quot;TEXTAREA&quot;)) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="四、屏蔽复制"><a href="#四、屏蔽复制" class="headerlink" title="四、屏蔽复制"></a>四、屏蔽复制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">document.oncopy &#x3D; function (event) &#123;</span><br><span class="line">        if (window.event) &#123;</span><br><span class="line">            event &#x3D; window.event;</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            var the &#x3D; event.srcElement;</span><br><span class="line">            if (!((the.tagName &#x3D;&#x3D; &quot;INPUT&quot; &amp;&amp; the.type.toLowerCase() &#x3D;&#x3D; &quot;text&quot;) || the.tagName &#x3D;&#x3D; &quot;TEXTAREA&quot;)) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="五、屏蔽剪切"><a href="#五、屏蔽剪切" class="headerlink" title="五、屏蔽剪切"></a>五、屏蔽剪切</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">document.oncut &#x3D; function (event) &#123;</span><br><span class="line">        if (window.event) &#123;</span><br><span class="line">            event &#x3D; window.event;</span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            var the &#x3D; event.srcElement;</span><br><span class="line">            if (!((the.tagName &#x3D;&#x3D; &quot;INPUT&quot; &amp;&amp; the.type.toLowerCase() &#x3D;&#x3D; &quot;text&quot;) || the.tagName &#x3D;&#x3D; &quot;TEXTAREA&quot;)) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="六、屏蔽选中"><a href="#六、屏蔽选中" class="headerlink" title="六、屏蔽选中"></a>六、屏蔽选中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">document.onselectstart &#x3D; function (event) &#123;</span><br><span class="line">        if (window.event) &#123;</span><br><span class="line">            event &#x3D; window.event;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        try &#123;</span><br><span class="line">            var the &#x3D; event.srcElement;</span><br><span class="line">            if (!((the.tagName &#x3D;&#x3D; &quot;INPUT&quot; &amp;&amp; the.type.toLowerCase() &#x3D;&#x3D; &quot;text&quot;) || the.tagName &#x3D;&#x3D; &quot;TEXTAREA&quot;)) &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            return true;</span><br><span class="line">        &#125; catch (e) &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JS小技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/16/js%E7%BD%91%E9%A1%B5%E9%98%B2%E6%8A%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6的新特性总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/23/ES6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/">ES6新特性总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/23/ES6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2019-12-23T13:00:10.107Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在日常做项目中用了一些很好用的ES6新的属性方法,我总结了一部分,想了解更多内容的请去<a href="https://www.runoob.com/w3cnote/es6-tutorial.html" target="_blank" rel="noopener">ES6教程查看</a></p>
-<h3 id="es6之扩展运算符-三个点（…）"><a href="#es6之扩展运算符-三个点（…）" class="headerlink" title="es6之扩展运算符 三个点（…）"></a>es6之扩展运算符 三个点（…）</h3><ul>
-<li>展开数组</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; [&#39;apple&#39;,&#39;banana&#39;,&#39;orange&#39;];</span><br><span class="line">console.log(...arr); &#x2F;&#x2F; &#39;apple&#39;,&#39;banana&#39;,&#39;orange&#39;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>当使用数组传参时可以合成数组</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function show(...a)&#123;</span><br><span class="line">   console.log(a);</span><br><span class="line">   &#x2F;&#x2F; [1, 2, 3, 4, 5]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">show(1,2,3,4,5);</span><br></pre></td></tr></table></figure>
-
-<h3 id="es6之字符串模板（-）"><a href="#es6之字符串模板（-）" class="headerlink" title="es6之字符串模板（``）"></a>es6之字符串模板（``）</h3><ul>
-<li>这个字符串模板使用场景很多变量拼接时经常用到，使用时按键盘Tab键上面的那个按键</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let name &#x3D;&#39;dqq&#39;;</span><br><span class="line">let age &#x3D; 18;</span><br><span class="line">let str &#x3D; &#96;这个人叫$&#123;name&#125;, 年龄是 $&#123;age&#125;岁&#96;;</span><br><span class="line">console.log(str);</span><br><span class="line">&#x2F;&#x2F; 这个人叫dqq, 年龄是18岁</span><br></pre></td></tr></table></figure>
-
-<h3 id="es6之过滤（filter）"><a href="#es6之过滤（filter）" class="headerlink" title="es6之过滤（filter）"></a>es6之过滤（filter）</h3><ul>
-<li>过滤掉符合条件的,返回自己想要的</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; [</span><br><span class="line">            &#123;title:&#39;aaaaa&#39;, read:100, hot:true&#125;,</span><br><span class="line">            &#123;title:&#39;bbbb&#39;, read:100, hot:false&#125;,</span><br><span class="line">            &#123;title:&#39;cccc&#39;, read:100, hot:true&#125;,</span><br><span class="line">            &#123;title:&#39;dddd&#39;, read:100, hot:false&#125;</span><br><span class="line">      ];</span><br><span class="line">let newArr &#x3D; arr.filter((item, index, arr)&#x3D;&gt;&#123;</span><br><span class="line">      return item.hot&#x3D;&#x3D;false;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(newArr);</span><br><span class="line">&#x2F;&#x2F;[</span><br><span class="line">   &#123;title:&#39;bbbb&#39;, read:100, hot:false&#125;,</span><br><span class="line">   &#123;title:&#39;dddd&#39;, read:100, hot:false&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-<h3 id="es6之数组重构（map）"><a href="#es6之数组重构（map）" class="headerlink" title="es6之数组重构（map）"></a>es6之数组重构（map）</h3><ul>
-<li>循环数组，返回自己想要的格式和对象名称</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; [</span><br><span class="line">           &#123;title:&#39;aaaaa&#39;, read:100, hot:true&#125;,</span><br><span class="line">           &#123;title:&#39;bbbb&#39;, read:100, hot:true&#125;,</span><br><span class="line">           &#123;title:&#39;cccc&#39;, read:100, hot:true&#125;,</span><br><span class="line">           &#123;title:&#39;dddd&#39;, read:100, hot:true&#125;</span><br><span class="line">       ];</span><br><span class="line"></span><br><span class="line">let newArr &#x3D; arr.map((item, index, arr)&#x3D;&gt;&#123;</span><br><span class="line">           let json&#x3D;&#123;&#125;</span><br><span class="line">           json.t &#x3D; &#96;^_^$&#123;item.title&#125;-----&#96;;</span><br><span class="line">           json.r &#x3D; item.read+200;</span><br><span class="line">           json.hot &#x3D; item.hot &#x3D;&#x3D; true &amp;&amp; &#39;真棒!!!&#39;;</span><br><span class="line">           return json;</span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="es6之数组的操作（find-，findIndex-，from-，of-，Set-，）"><a href="#es6之数组的操作（find-，findIndex-，from-，of-，Set-，）" class="headerlink" title="es6之数组的操作（find()，findIndex()，from()，of()，Set()，）"></a>es6之数组的操作（find()，findIndex()，from()，of()，Set()，）</h3><blockquote>
-<p>arr.find():  查找，找出第一个符合条件的数组成员，如果没有找到，返回undefined</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; [23,900,101,80,100];</span><br><span class="line">let res &#x3D; arr.find((val, index) &#x3D;&gt;&#123;</span><br><span class="line">       return val&gt;100;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>arr.findIndex(): 找的是位置， 没找到返回-1</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> let arr &#x3D; [23,900,101,80,100];</span><br><span class="line">let res &#x3D; arr.findIndex((val, index) &#x3D;&gt;&#123;</span><br><span class="line">     return val&gt;100;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Array.from:<br>作用: 把类数组(获取一组元素、arguments…) 对象转成数组<br>个人观点： 具备 length这个东西，就靠谱</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let str &#x3D; &#39;Strive&#39;;</span><br><span class="line">let arr &#x3D; Array.from(str);</span><br><span class="line"> console.log(arr);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Array.of():  把一组值，转成数组</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; Array.of(&#39;apple&#39;,&#39;banana&#39;,&#39;orange&#39;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Set数组去重,返回新的数组</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let arr &#x3D; [1,2,3,4,5,6,7,6,5,4,3,2,1,2,3,4,4];</span><br><span class="line">let newArr &#x3D; [...new Set(arr)];</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/23/ES6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/22/hello-world/" class="archive-article-date">
-  	<time datetime="2019-12-22T12:08:15.550Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/22/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1151,6 +1159,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
             
             <div class="clearfix"></div>

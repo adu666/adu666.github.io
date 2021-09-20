@@ -16,7 +16,7 @@
 <meta property="og:description" content="CSS开发中的经验总结 一 、文本换行总结 强制英文单词断行  123div&amp;#123;   word-break:break-all;&amp;#125;   自动换行  12345div&amp;#123;    word-wrap: break-word;    word-break: normal;&amp;#125;   强制不换行  1234div&amp;#123;    white-space:nowrap;&amp;#">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-19T14:50:48.728Z">
-<meta property="article:modified_time" content="2021-09-19T14:50:48.729Z">
+<meta property="article:modified_time" content="2021-09-20T15:49:50.877Z">
 <meta property="article:author" content="阿杜">
 <meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary">
@@ -255,9 +255,7 @@
 <li>vertical-rl：垂直方向自右而左的书写方式。即 top-bottom-right-left</li>
 <li>vertical-lr：垂直方向内内容从上到下，水平方向从左到右</li>
 <li>sideways-rl：内容垂直方向从上到下排列</li>
-<li>sideways-lr：内容垂直方向从下到上排列<blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;bruce flex-ct-x&quot;&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;vertical-text&quot;&gt;</span><br><span class="line">  &lt;h3&gt;诗经&lt;&#x2F;h3&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"> 死生契阔，&lt;br&gt;</span><br><span class="line"> 与子成说。&lt;br&gt;</span><br><span class="line"> 执子之手，&lt;br&gt;</span><br><span class="line"> 与子偕老。</span><br><span class="line"> &lt;&#x2F;p&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.vertical-text &#123;</span><br><span class="line"> writing-mode: vertical-rl; &#x2F;&#x2F; 文字排版方向</span><br><span class="line"> h3 &#123;</span><br><span class="line">  padding-left: 10px;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  color: #d60f5c;</span><br><span class="line"> &#125;</span><br><span class="line"> p &#123;</span><br><span class="line">  line-height: 30px; &#x2F;&#x2F; 行间距</span><br><span class="line"> letter-spacing: 7px; &#x2F;&#x2F; 文字间距</span><br><span class="line">  color: #ee1166;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>sideways-lr：内容垂直方向从下到上排列<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div class&#x3D;&quot;bruce flex-ct-x&quot;&gt;</span><br><span class="line"> &lt;div class&#x3D;&quot;vertical-text&quot;&gt;</span><br><span class="line">  &lt;h3&gt;诗经&lt;&#x2F;h3&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"> 死生契阔，&lt;br&gt;</span><br><span class="line"> 与子成说。&lt;br&gt;</span><br><span class="line"> 执子之手，&lt;br&gt;</span><br><span class="line"> 与子偕老。</span><br><span class="line"> &lt;&#x2F;p&gt;</span><br><span class="line"> &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">.vertical-text &#123;</span><br><span class="line"> writing-mode: vertical-rl; &#x2F;&#x2F; 文字排版方向</span><br><span class="line"> h3 &#123;</span><br><span class="line">  padding-left: 10px;</span><br><span class="line">  font-weight: bold;</span><br><span class="line">  font-size: 18px;</span><br><span class="line">  color: #d60f5c;</span><br><span class="line"> &#125;</span><br><span class="line"> p &#123;</span><br><span class="line">  line-height: 30px; &#x2F;&#x2F; 行间距</span><br><span class="line"> letter-spacing: 7px; &#x2F;&#x2F; 文字间距</span><br><span class="line">  color: #ee1166;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -363,6 +361,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2021/09/20/ES6%20%E6%95%B0%E7%BB%84some()%E5%92%8Cevery()%E4%BD%BF%E7%94%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ES6 数组some()和every()使用
+        
+      </div>
+    </a>
   
   
     <a href="/2021/09/19/css%E5%B1%85%E4%B8%AD%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
@@ -509,6 +516,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Typescript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
             
             <div class="clearfix"></div>
